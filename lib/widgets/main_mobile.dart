@@ -11,7 +11,7 @@ class MainMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(20),
-      height: MediaQuery.sizeOf(context).height * 0.8,
+      height: MediaQuery.sizeOf(context).height * 0.9,
       constraints: const BoxConstraints(minHeight: 500.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -27,11 +27,11 @@ class MainMobile extends StatelessWidget {
             blendMode: BlendMode.srcATop,
             child: CircleAvatar(
               foregroundImage: const AssetImage(profilePath),
-              radius: MediaQuery.sizeOf(context).width * 0.3,
+              radius: MediaQuery.sizeOf(context).width * 0.25,
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           const Text(
             "Hi,\nI'm THENG YUAN YUAN.\nA Fresh Graduate.",
