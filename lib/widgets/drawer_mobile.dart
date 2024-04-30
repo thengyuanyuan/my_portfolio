@@ -3,16 +3,16 @@ import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
+  final VoidCallback onCloseTap;
   const DrawerMobile({
     super.key,
-    required this.scaffoldKey,
+    required this.onCloseTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: CustomColor.scaffoldBg,
+      // backgroundColor: CustomColor.scaffoldBg,
       child: ListView(
         children: [
           Align(
@@ -20,9 +20,7 @@ class DrawerMobile extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: IconButton(
-                onPressed: () {
-                  scaffoldKey.currentState?.closeEndDrawer();
-                },
+                onPressed: onCloseTap,
                 icon: const Icon(Icons.close_rounded),
               ),
             ),

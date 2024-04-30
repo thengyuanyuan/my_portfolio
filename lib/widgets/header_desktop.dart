@@ -6,8 +6,10 @@ import '../../constants/nav_items.dart';
 import 'site_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
+  final VoidCallback? onLogoTap;
   const HeaderDesktop({
     super.key,
+    this.onLogoTap,
   });
 
   @override
@@ -19,7 +21,7 @@ class HeaderDesktop extends StatelessWidget {
       decoration: kHeaderDecoration,
       child: Row(
         children: [
-          SiteLogo(onTap: () {}),
+          SiteLogo(onTap: onLogoTap),
           const Spacer(),
           for (int i = 0; i < navItemList.length; i++)
             Padding(
