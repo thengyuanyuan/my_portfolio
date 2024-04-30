@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   responsive_builder: ^0.7.0
+  flutter_devicon: ^1.0.1
 
 dev_dependencies:
   flutter_test:

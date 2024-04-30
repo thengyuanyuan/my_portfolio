@@ -18,8 +18,8 @@ import 'package:flutter/material.dart';
 
 List<NavItemModel> navItemList = [
   NavItemModel(title: "Home", icon: Icons.home_filled),
-  NavItemModel(title: "Skills", icon: Icons.android_rounded),
-  NavItemModel(title: "Projects", icon: Icons.back_hand),
+  NavItemModel(title: "Skills", icon: Icons.handyman_rounded),
+  NavItemModel(title: "Projects", icon: Icons.apps_rounded),
   NavItemModel(title: "Blog", icon: Icons.web_rounded),
   NavItemModel(title: "Contact", icon: Icons.quick_contacts_mail_rounded)
 ];
@@ -28,5 +28,5 @@ class NavItemModel {
   final String title;
   final IconData? icon;
 
-  NavItemModel({required this.title, this.icon});
+  NavItemModel({required this.title, this.icon = Icons.add_circle_outlined});
 }
