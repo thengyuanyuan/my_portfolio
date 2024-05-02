@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/nav_item_model.dart';
+
 // List<String> navTitles = [
 //   "Home",
 //   "Skills",
@@ -23,10 +25,3 @@ List<NavItemModel> navItemList = [
   NavItemModel(title: "Blog", icon: Icons.web_rounded),
   NavItemModel(title: "Contact", icon: Icons.quick_contacts_mail_rounded)
 ];
-
-class NavItemModel {
-  final String title;
-  final IconData? icon;
-
-  NavItemModel({required this.title, this.icon = Icons.add_circle_outlined});
-}
