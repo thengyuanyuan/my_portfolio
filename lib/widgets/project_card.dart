@@ -18,7 +18,7 @@ class ProjectCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 350,
+      height: 380,
       width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -69,20 +69,21 @@ class ProjectCardWidget extends StatelessWidget {
             ),
           ),
           // Description
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-            child: Text(
-              projectModel.description,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontWeight: FontWeight.w200,
-                fontSize: 14,
-                color: CustomColor.whiteSecondary,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+              child: Text(
+                projectModel.description,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w200,
+                  fontSize: 14,
+                  color: CustomColor.whiteSecondary,
+                ),
               ),
             ),
           ),
-          const Spacer(),
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
             child: Row(
