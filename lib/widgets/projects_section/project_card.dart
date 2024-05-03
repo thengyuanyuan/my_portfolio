@@ -1,4 +1,5 @@
 import 'dart:js' as js;
+// import 'package:url_launcher/url_launcher.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_devicon/flutter_devicon.dart';
@@ -122,6 +123,13 @@ class ProjectCardWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: InkWell(
+                        // onTap: () async {
+                        //   if (!await launchUrl(
+                        //       Uri.parse(projectModel.iosLink!))) {
+                        //     throw Exception(
+                        //         'Could not launch ${projectModel.iosLink!}');
+                        //   }
+                        // },
                         onTap: () {
                           js.context.callMethod("open", [projectModel.iosLink]);
                         },
@@ -135,6 +143,13 @@ class ProjectCardWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: InkWell(
+                        // onTap: () async {
+                        //   if (! await launchUrl(
+                        //       Uri.parse(projectModel.androidLink!))) {
+                        //     throw Exception(
+                        //         'Could not launch ${projectModel.androidLink!}');
+                        //   }
+                        // },
                         onTap: () {
                           js.context
                               .callMethod("open", [projectModel.androidLink]);
@@ -149,6 +164,13 @@ class ProjectCardWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: InkWell(
+                        // onTap: () async {
+                        //   if (!await launchUrl(
+                        //       Uri.parse(projectModel.webLink!))) {
+                        //     throw Exception(
+                        //         'Could not launch ${projectModel.webLink!}');
+                        //   }
+                        // },
                         onTap: () {
                           js.context.callMethod("open", [projectModel.webLink]);
                         },
@@ -162,6 +184,13 @@ class ProjectCardWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: InkWell(
+                        // onTap: () async {
+                        //   if (!await launchUrl(
+                        //       Uri.parse(projectModel.githubLink!))) {
+                        //     throw Exception(
+                        //         'Could not launch ${projectModel.githubLink!}');
+                        //   }
+                        // },
                         onTap: () {
                           js.context
                               .callMethod("open", [projectModel.githubLink]);
@@ -176,6 +205,13 @@ class ProjectCardWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: InkWell(
+                        // onTap: () async {
+                        //   if (!await launchUrl(
+                        //       Uri.parse(projectModel.documentLink!))) {
+                        //     throw Exception(
+                        //         'Could not launch ${projectModel.documentLink!}');
+                        //   }
+                        // },
                         onTap: () {
                           js.context
                               .callMethod("open", [projectModel.documentLink]);

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/assets.dart';
 import 'package:my_portfolio/constants/colors.dart';
 
+import '../../styles/styles.dart';
+
 class MainMobile extends StatelessWidget {
   const MainMobile({
     super.key,
@@ -35,6 +37,7 @@ class MainMobile extends StatelessWidget {
           ),
           const Text(
             "Hi,\nI'm THENG YUAN YUAN.\nA Fresh Graduate.",
+            // TODO: Animated text to change the role
             style: TextStyle(
               fontSize: 25.0,
               height: 1.5,
@@ -45,15 +48,8 @@ class MainMobile extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.amber,
-              foregroundColor: Colors.grey[850],
-              padding: const EdgeInsets.symmetric(
-                vertical: 20,
-                horizontal: 50,
-              ),
-            ),
-            child: const Text('Download Résumé'),
+            style: kButtonStyle,
+            child: const Text('Get in touch'),
           ),
         ],
       ),

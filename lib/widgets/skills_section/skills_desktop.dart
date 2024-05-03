@@ -15,17 +15,18 @@ class SkillsDesktop extends StatelessWidget {
       children: [
         ConstrainedBox(
           constraints: const BoxConstraints(
-            maxWidth: 500,
+            maxWidth: 600,
           ),
           child: Wrap(
             spacing: 10,
             runSpacing: 10,
+            alignment: WrapAlignment.center,
             children: [
               for (int i = 0; i < platformItemList.length; i++)
                 Container(
                   width: 200,
                   decoration: BoxDecoration(
-                    color: CustomColor.bgLight1,
+                    color: CustomColor.bgLight2,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: ListTile(
@@ -51,6 +52,7 @@ class SkillsDesktop extends StatelessWidget {
             child: Wrap(
               spacing: 10,
               runSpacing: 10,
+              alignment: WrapAlignment.center,
               children: [
                 for (int i = 0; i < proLangItemList.length; i++)
                   Chip(

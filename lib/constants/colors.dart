@@ -10,4 +10,21 @@ class CustomColor {
   static const Color yellowSecondary = Color(0xffFFC25C);
   static const Color whitePrimary = Color(0xffEAEAEB);
   static const Color whiteSecondary = Color(0xffC8C9CE);
+
+  static const Color buttonForegroundColor = Colors.black87;
+  static const Color buttonBackgroundColor = Colors.amber;
+}
+
+class CustomTheme {
+  static final lightTheme = ThemeData(
+    primaryColor: Colors.white,
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: const TextTheme(),
+  );
+  static final darkTheme = ThemeData(
+    primaryColor: Colors.black,
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: Colors.black,
+  );
 }

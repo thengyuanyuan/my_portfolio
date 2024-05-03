@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/assets.dart';
 import 'package:my_portfolio/constants/colors.dart';
 
+import '../../styles/styles.dart';
+
 class MainDesktop extends StatelessWidget {
   const MainDesktop({
     super.key,
@@ -31,15 +33,8 @@ class MainDesktop extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber,
-                  foregroundColor: Colors.grey[850],
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 50,
-                  ),
-                ),
-                child: const Text('Download Résumé'),
+                style: kButtonStyle,
+                child: const Text('Get in touch'),
               ),
             ],
           ),

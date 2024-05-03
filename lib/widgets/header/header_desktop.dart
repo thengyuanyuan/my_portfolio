@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/styles/styles.dart';
 
-import '../../constants/colors.dart';
-import '../../constants/nav_items.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/nav_items.dart';
 import 'site_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {

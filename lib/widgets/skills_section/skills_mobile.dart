@@ -22,7 +22,7 @@ class SkillsMobile extends StatelessWidget {
                 Container(
                   width: 300,
                   decoration: BoxDecoration(
-                    color: CustomColor.bgLight1,
+                    color: CustomColor.bgLight2,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: ListTile(
