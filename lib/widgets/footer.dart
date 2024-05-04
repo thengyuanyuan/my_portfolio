@@ -12,7 +12,7 @@ class Footer extends StatelessWidget {
       alignment: Alignment.center,
       width: double.maxFinite,
       padding: const EdgeInsets.symmetric(vertical: 25),
-      child: Text(
+      child: const Text(
         "Made by Theng Yuan Yuan with Flutter",
         style: TextStyle(
           fontWeight: FontWeight.w300,
