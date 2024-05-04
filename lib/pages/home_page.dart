@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_devicon/flutter_devicon.dart';
+import 'package:my_portfolio/constants/colors.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import '../constants/sns_links.dart';
 import '../widgets/contacts_section/contacts_section.dart';
+import '../widgets/footer.dart';
 import '../widgets/header/drawer_mobile.dart';
 import '../widgets/header/header.dart';
+import 'dart:js' as js;
+
+import '../widgets/main_section/main_section.dart';
+import '../widgets/projects_section/projects_section.dart';
+import '../widgets/skills_section/skills_section.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -31,19 +40,15 @@ class HomePage extends StatelessWidget {
             // HEADER (MENU)
             Header(scaffoldKey: scaffoldKey),
             // MAIN (INTRODUCTION)
-            // const MainSection(),
+            const MainSection(),
             // SKILLS
-            // const SkillsSection(),
+            const SkillsSection(),
             // PROJECTS
-            // const ProjectsSection(),
+            const ProjectsSection(),
             // CONTACTS
             const ContactsSection(),
             // FOOTER
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.black,
-            ),
+            const Footer(),
           ],
         ),
       );
