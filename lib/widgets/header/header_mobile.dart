@@ -18,17 +18,17 @@ class HeaderMobile extends StatelessWidget {
       height: 50,
       width: double.maxFinite,
       margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      decoration: kHeaderDecoration,
+      // decoration: kHeaderDecoration,
       child: Row(
         children: [
           SiteLogo(
             onTap: onLogoTap,
           ),
           const Spacer(),
-          IconButton(
-            icon: const Icon(Icons.menu_rounded),
-            onPressed: onMenuTap,
-          ),
+          // IconButton(
+          //   icon: const Icon(Icons.menu_rounded),
+          //   onPressed: onMenuTap,
+          // ),
           const SizedBox(
             width: 15,
           )

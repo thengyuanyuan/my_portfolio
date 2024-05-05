@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       return Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.black,
+        // backgroundColor: Colors.black,
         // TODO: set theme color
         // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         endDrawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
@@ -46,17 +46,26 @@ class HomePage extends StatelessWidget {
                 onCloseTap: () => scaffoldKey.currentState?.closeEndDrawer(),
               )
             : null,
+
         // floatingActionButton: InkWell(
         //   onTap: () {},
         //   child: Icon(Icons.dark_mode),
         // ),
-        body: SingleChildScrollView(
-          controller: scrollController,
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              // HEADER (MENU)
-              Header(
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.white.withOpacity(0.2),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: BorderSide(
+                  color: Colors.amber.withOpacity(0.2),
+                  width: 5,
+                  style: BorderStyle.solid,
+                ),
+              ),
+              floating: true,
+              snap: true,
+              title: Header(
                 onNavItemTap: (int navIndex) {
                   // Navigation Function
                   scrollToSection(navIndex);
@@ -64,18 +73,27 @@ class HomePage extends StatelessWidget {
                 onMenuTapMobile: () =>
                     scaffoldKey.currentState?.openEndDrawer(),
               ),
-              // MAIN (INTRODUCTION)
-              MainSection(key: navKeys.first),
-              // SKILLS
-              SkillsSection(key: navKeys[1]),
-              // PROJECTS
-              ProjectsSection(key: navKeys[2]),
-              // CONTACTS
-              ContactsSection(key: navKeys[3]),
-              // FOOTER
-              const Footer(),
-            ],
-          ),
+            ),
+            SliverToBoxAdapter(
+              key: navKeys[0],
+              child: const MainSection(),
+            ),
+            SliverToBoxAdapter(
+              key: navKeys[1],
+              child: const SkillsSection(),
+            ),
+            SliverToBoxAdapter(
+              key: navKeys[2],
+              child: const ProjectsSection(),
+            ),
+            SliverToBoxAdapter(
+              key: navKeys[3],
+              child: const ContactsSection(),
+            ),
+            const SliverToBoxAdapter(
+              child: Footer(),
+            )
+          ],
         ),
       );
     });

@@ -20,7 +20,7 @@ class HeaderDesktop extends StatelessWidget {
       height: 50,
       width: double.maxFinite,
       margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      decoration: kHeaderDecoration,
+      // decoration: kHeaderDecoration,
       child: Row(
         children: [
           SiteLogo(onTap: onLogoTap),
