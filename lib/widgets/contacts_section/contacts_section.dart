@@ -6,6 +6,7 @@ import 'package:my_portfolio/styles/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'custom_text_field.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
 class ContactsSection extends StatelessWidget {

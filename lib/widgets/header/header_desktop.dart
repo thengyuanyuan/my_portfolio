@@ -7,9 +7,11 @@ import 'site_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
   final VoidCallback? onLogoTap;
+  final Function(int) onNavItemTap;
   const HeaderDesktop({
     super.key,
     this.onLogoTap,
+    required this.onNavItemTap,
   });
 
   @override
@@ -27,7 +29,9 @@ class HeaderDesktop extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  onNavItemTap(i);
+                },
                 child: Text(
                   navItemList[i].title,
                   style: const TextStyle(

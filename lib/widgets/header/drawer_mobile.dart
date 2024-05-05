@@ -4,9 +4,11 @@ import 'package:my_portfolio/constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
   final VoidCallback onCloseTap;
+  final Function(int) onNavItemTap;
   const DrawerMobile({
     super.key,
     required this.onCloseTap,
+    required this.onNavItemTap,
   });
 
   @override
@@ -36,7 +38,9 @@ class DrawerMobile extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 16.0,
               ),
-              onTap: () {},
+              onTap: () {
+                onNavItemTap(i);
+              },
               leading: Icon(navItemList[i].icon),
               title: Text(navItemList[i].title),
             ),
