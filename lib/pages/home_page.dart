@@ -34,9 +34,6 @@ class HomePage extends StatelessWidget {
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       return Scaffold(
         key: scaffoldKey,
-        // backgroundColor: Colors.black,
-        // TODO: set theme color
-        // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         endDrawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
             ? DrawerMobile(
                 onNavItemTap: (int navIndex) {
@@ -46,37 +43,41 @@ class HomePage extends StatelessWidget {
                 onCloseTap: () => scaffoldKey.currentState?.closeEndDrawer(),
               )
             : null,
-
-        // floatingActionButton: InkWell(
-        //   onTap: () {},
-        //   child: Icon(Icons.dark_mode),
-        // ),
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              backgroundColor: Colors.white.withOpacity(0.2),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-                side: BorderSide(
-                  color: Colors.amber.withOpacity(0.2),
-                  width: 5,
-                  style: BorderStyle.solid,
-                ),
-              ),
               floating: true,
               snap: true,
+              actions: [
+                sizingInformation.deviceScreenType == DeviceScreenType.mobile
+                    ? Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Builder(
+                          builder: (context) => IconButton(
+                            icon: const Icon(Icons.menu_rounded),
+                            onPressed: () =>
+                                Scaffold.of(context).openEndDrawer(),
+                            tooltip: MaterialLocalizations.of(context)
+                                .openAppDrawerTooltip,
+                          ),
+                        ),
+                      )
+                    : const SizedBox(
+                        width: 10,
+                      )
+              ],
               title: Header(
                 onNavItemTap: (int navIndex) {
                   // Navigation Function
                   scrollToSection(navIndex);
                 },
-                onMenuTapMobile: () =>
-                    scaffoldKey.currentState?.openEndDrawer(),
               ),
             ),
             SliverToBoxAdapter(
               key: navKeys[0],
-              child: const MainSection(),
+              child: MainSection(
+                onButtonTap: () {},
+              ),
             ),
             SliverToBoxAdapter(
               key: navKeys[1],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/styles/styles.dart';
 import 'package:my_portfolio/widgets/skills_section/skills_desktop.dart';
 import 'package:my_portfolio/widgets/skills_section/skills_mobile.dart';
@@ -15,7 +14,6 @@ class SkillsSection extends StatelessWidget {
     return Container(
       width: MediaQuery.sizeOf(context).width,
       padding: const EdgeInsets.only(top: 50, bottom: 80, left: 25, right: 25),
-      color: CustomColor.bgLight1,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -24,7 +22,6 @@ class SkillsSection extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-
           // Skills Content
           ScreenTypeLayout.builder(
             desktop: (BuildContext context) => const SkillsDesktop(),

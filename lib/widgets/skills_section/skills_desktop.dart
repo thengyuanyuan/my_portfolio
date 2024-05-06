@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/skill_items.dart';
 
 class SkillsDesktop extends StatelessWidget {
@@ -24,24 +23,29 @@ class SkillsDesktop extends StatelessWidget {
             children: [
               for (int i = 0; i < platformItemList.length; i++)
                 Container(
-                  width: 200,
+                  width: 250,
                   decoration: BoxDecoration(
-                    color: CustomColor.bgLight2,
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 10,
+                  child: Chip(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 25,
                       horizontal: 20,
                     ),
-                    leading: Icon(platformItemList[i].icon),
-                    title: Text(platformItemList[i].title),
+                    avatar: Icon(platformItemList[i].icon),
+                    labelPadding: EdgeInsets.only(left: 20.0),
+                    label: SizedBox(
+                      width: 300,
+                      child: Text(platformItemList[i].title),
+                    ),
                   ),
                 ),
             ],
           ),
         ),
-        const SizedBox(width: 50),
+        const SizedBox(
+          width: 50,
+        ),
         // Programming Languages
         Flexible(
           child: ConstrainedBox(
@@ -56,7 +60,7 @@ class SkillsDesktop extends StatelessWidget {
               children: [
                 for (int i = 0; i < proLangItemList.length; i++)
                   Chip(
-                    backgroundColor: CustomColor.bgLight1,
+                    // backgroundColor: CustomColor.bgLight1,
                     padding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
@@ -64,7 +68,7 @@ class SkillsDesktop extends StatelessWidget {
                     label: Text(proLangItemList[i].title),
                     avatar: Icon(
                       proLangItemList[i].icon,
-                      color: CustomColor.whiteSecondary,
+                      // color: CustomColor.whiteSecondary,
                     ),
                   ),
               ],

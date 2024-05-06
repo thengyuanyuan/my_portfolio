@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../constants/colors.dart';
 
 class SiteLogo extends StatelessWidget {
   final VoidCallback? onTap;
@@ -15,7 +14,7 @@ class SiteLogo extends StatelessWidget {
           fontSize: 22,
           fontWeight: FontWeight.bold,
           decoration: TextDecoration.none,
-          color: CustomColor.yellowSecondary,
+          // color: CustomColor.yellowSecondary,
         ),
       ),
     );

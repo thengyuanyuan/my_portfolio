@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/skill_items.dart';
 
 class SkillsMobile extends StatelessWidget {
@@ -22,21 +21,30 @@ class SkillsMobile extends StatelessWidget {
                 Container(
                   width: 300,
                   decoration: BoxDecoration(
-                    color: CustomColor.bgLight2,
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 10,
+                  child: Chip(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 25,
                       horizontal: 20,
                     ),
-                    leading: Icon(platformItemList[i].icon),
-                    title: Text(platformItemList[i].title),
+                    avatar: Icon(
+                      platformItemList[i].icon,
+                    ),
+                    labelPadding: const EdgeInsets.only(left: 20.0),
+                    label: SizedBox(
+                      width: 300,
+                      child: Text(
+                        platformItemList[i].title,
+                      ),
+                    ),
                   ),
                 ),
             ],
           ),
-          const SizedBox(height: 50),
+          const SizedBox(
+            height: 50,
+          ),
           // Programming Languages
           Wrap(
             spacing: 10,
@@ -45,7 +53,7 @@ class SkillsMobile extends StatelessWidget {
             children: [
               for (int i = 0; i < proLangItemList.length; i++)
                 Chip(
-                  backgroundColor: CustomColor.bgLight1,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 20,
@@ -53,7 +61,6 @@ class SkillsMobile extends StatelessWidget {
                   label: Text(proLangItemList[i].title),
                   avatar: Icon(
                     proLangItemList[i].icon,
-                    color: CustomColor.whiteSecondary,
                   ),
                 ),
             ],

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/assets.dart';
-import 'package:my_portfolio/constants/colors.dart';
 
 import '../../styles/styles.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({
     super.key,
+    this.onButtonTap,
   });
+
+  final VoidCallback? onButtonTap;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +29,14 @@ class MainDesktop extends StatelessWidget {
                   fontSize: 30.0,
                   height: 1.5,
                   fontWeight: FontWeight.w600,
-                  color: CustomColor.whitePrimary,
+                  // color: CustomColor.whitePrimary,
                 ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: onButtonTap,
                 style: kButtonStyle,
-                child: const Text('Get in touch'),
+                child: const Text('Download CV'),
               ),
             ],
           ),

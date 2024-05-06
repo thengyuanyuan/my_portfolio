@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
@@ -34,7 +33,7 @@ class DrawerMobile extends StatelessWidget {
                 vertical: 5,
               ),
               titleTextStyle: const TextStyle(
-                color: CustomColor.whitePrimary,
+                // color: CustomColor.whitePrimary,
                 fontWeight: FontWeight.w600,
                 fontSize: 16.0,
               ),

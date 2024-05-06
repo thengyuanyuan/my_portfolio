@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -16,7 +15,7 @@ class Footer extends StatelessWidget {
         "Made by Theng Yuan Yuan with Flutter",
         style: TextStyle(
           fontWeight: FontWeight.w300,
-          color: CustomColor.whiteSecondary,
+          // color: CustomColor.whiteSecondary,
         ),
       ),
     );

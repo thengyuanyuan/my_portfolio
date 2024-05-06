@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/assets.dart';
-import 'package:my_portfolio/constants/colors.dart';
 
 import '../../styles/styles.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({
     super.key,
+    this.onButtonTap,
   });
+
+  final VoidCallback? onButtonTap;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class MainMobile extends StatelessWidget {
           ShaderMask(
             shaderCallback: (bounds) {
               return LinearGradient(colors: [
-                Colors.black.withOpacity(0.5),
+                Colors.black.withOpacity(0.3),
                 Colors.black.withOpacity(0.1),
               ]).createShader(bounds);
             },
@@ -42,14 +44,14 @@ class MainMobile extends StatelessWidget {
               fontSize: 25.0,
               height: 1.5,
               fontWeight: FontWeight.w600,
-              color: CustomColor.whitePrimary,
+              // color: CustomColor.whitePrimary,
             ),
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: onButtonTap,
             style: kButtonStyle,
-            child: const Text('Get in touch'),
+            child: const Text('Download CV'),
           ),
         ],
       ),

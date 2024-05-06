@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/project_items.dart';
 import 'package:my_portfolio/widgets/projects_section/project_card.dart';
 
@@ -53,7 +52,7 @@ class _ProjectSliderState extends State<ProjectSlider> {
             color: Colors.black.withOpacity(0.3),
             child: InkWell(
               hoverColor: Colors.white.withOpacity(0.3),
-              splashColor: CustomColor.buttonBackgroundColor,
+              // splashColor: CustomColor.buttonBackgroundColor,
               onTap: () {
                 carouselController.previousPage(
                   duration: const Duration(milliseconds: 300),
@@ -73,7 +72,7 @@ class _ProjectSliderState extends State<ProjectSlider> {
             color: Colors.black.withOpacity(0.3),
             child: InkWell(
               hoverColor: Colors.white.withOpacity(0.3),
-              splashColor: CustomColor.buttonBackgroundColor,
+              // splashColor: CustomColor.buttonBackgroundColor,
               onTap: () {
                 carouselController.nextPage(
                   duration: const Duration(milliseconds: 300),

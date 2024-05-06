@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'ThengYuanYuan',
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       home: HomePage(),
     );
   }

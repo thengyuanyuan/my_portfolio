@@ -19,19 +19,17 @@ class ContactsSection extends StatelessWidget {
     return Container(
       width: MediaQuery.sizeOf(context).width,
       padding: const EdgeInsets.only(top: 50, bottom: 80, left: 25, right: 25),
-      color: CustomColor.bgLight1,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Contacts title
           Text(
-            'My Contacts',
+            'Contact Me',
             style: kSectionTitleTextStyle,
           ),
           const SizedBox(
             height: 50,
           ),
-
           // Contacts Content
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 650),
@@ -55,10 +53,12 @@ class ContactsSection extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {},
                     child: const Text("Get in touch"),
+                    style: kButtonStyle.copyWith(),
                   ),
                 ),
                 const SizedBox(
-                  width: 250,
+                  height: 50,
+                  width: 200,
                   child: Divider(
                     thickness: 2,
                   ),
