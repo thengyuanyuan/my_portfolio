@@ -8,8 +8,6 @@ import 'package:intl/intl.dart';
 
 import 'package:my_portfolio/models/project_model.dart';
 
-import '../../constants/colors.dart';
-
 class ProjectCardWidget extends StatelessWidget {
   final ProjectModel projectModel;
   const ProjectCardWidget({
@@ -33,7 +31,7 @@ class ProjectCardWidget extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
+            SizedBox(
               height: 150,
               width: 300,
               child: Stack(

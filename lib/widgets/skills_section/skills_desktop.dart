@@ -33,7 +33,7 @@ class SkillsDesktop extends StatelessWidget {
                       horizontal: 20,
                     ),
                     avatar: Icon(platformItemList[i].icon),
-                    labelPadding: EdgeInsets.only(left: 20.0),
+                    labelPadding: const EdgeInsets.only(left: 20.0),
                     label: SizedBox(
                       width: 300,
                       child: Text(platformItemList[i].title),

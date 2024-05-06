@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_devicon/flutter_devicon.dart';
-import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/sns_links.dart';
 import 'package:my_portfolio/styles/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -52,8 +51,8 @@ class ContactsSection extends StatelessWidget {
                   width: double.maxFinite,
                   child: ElevatedButton(
                     onPressed: () {},
+                    style: kButtonStyle,
                     child: const Text("Get in touch"),
-                    style: kButtonStyle.copyWith(),
                   ),
                 ),
                 const SizedBox(

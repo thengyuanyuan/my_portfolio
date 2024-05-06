@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/config.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../widgets/contacts_section/contacts_section.dart';
 import '../widgets/footer.dart';
@@ -43,6 +44,16 @@ class HomePage extends StatelessWidget {
                 onCloseTap: () => scaffoldKey.currentState?.closeEndDrawer(),
               )
             : null,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            currentTheme.switchTheme();
+          },
+          child: Icon(
+            currentTheme.currentTheme() == ThemeMode.light
+                ? Icons.dark_mode_rounded
+                : Icons.light_mode_rounded,
+          ),
+        ),
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
