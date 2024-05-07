@@ -8,6 +8,7 @@ import '../widgets/header/header.dart';
 import '../widgets/main_section/main_section.dart';
 import '../widgets/projects_section/projects_section.dart';
 import '../widgets/skills_section/skills_section.dart';
+import '../download_file.dart';
 
 // TODO: Publish to Netify? GitHub?
 
@@ -20,10 +21,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void scrollToSection(int navIndex) {
-      if (navIndex == 4) {
-        // Get CV
-        return;
-      }
       final key = navKeys[navIndex];
       Scrollable.ensureVisible(
         key.currentContext!,
@@ -87,7 +84,13 @@ class HomePage extends StatelessWidget {
             SliverToBoxAdapter(
               key: navKeys[0],
               child: MainSection(
-                onButtonTap: () {},
+                // TODO: add resume
+                onButtonTap: () {
+                  downloadFile(
+                    "assets/thengyuanyuan_270424_Full CV Resume.pdf",
+                    "Theng Yuan Yuan - CV",
+                  );
+                },
               ),
             ),
             SliverToBoxAdapter(
@@ -104,7 +107,7 @@ class HomePage extends StatelessWidget {
             ),
             const SliverToBoxAdapter(
               child: Footer(),
-            )
+            ),
           ],
         ),
       );
