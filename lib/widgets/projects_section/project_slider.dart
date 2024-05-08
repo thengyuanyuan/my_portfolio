@@ -40,6 +40,7 @@ class _ProjectSliderState extends State<ProjectSlider> {
           itemCount: projectItemsList.length,
           itemBuilder:
               (BuildContext context, int itemIndex, int pageViewIndex) {
+            projectItemsList.sort((a, b) => a.date.compareTo(b.date));
             // Project Card
             return ProjectCardWidget(
               projectModel: projectItemsList[itemIndex],

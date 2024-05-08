@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/config.dart';
-import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/styles/colors.dart';
 
 import 'pages/home_page.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/assets.dart';
+import 'package:my_portfolio/constants/assets_path.dart';
 
 import '../../styles/styles.dart';
 

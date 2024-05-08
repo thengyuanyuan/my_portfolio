@@ -1,3 +1,3 @@
-import 'app_theme.dart';
+import 'utils/app_theme.dart';
 
 AppTheme currentTheme = AppTheme();

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/config.dart';
+import 'package:my_portfolio/constants/assets_path.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../widgets/contacts_section/contacts_section.dart';
-import '../widgets/footer.dart';
+import '../widgets/footer/footer.dart';
 import '../widgets/header/drawer_mobile.dart';
 import '../widgets/header/header.dart';
 import '../widgets/main_section/main_section.dart';
 import '../widgets/projects_section/projects_section.dart';
 import '../widgets/skills_section/skills_section.dart';
-import '../download_file.dart';
+import '../utils/download_file.dart';
 
 // TODO: Publish to Netify? GitHub?
 
@@ -84,10 +85,9 @@ class HomePage extends StatelessWidget {
             SliverToBoxAdapter(
               key: navKeys[0],
               child: MainSection(
-                // TODO: add resume
                 onButtonTap: () {
                   downloadFile(
-                    "assets/thengyuanyuan_270424_Full CV Resume.pdf",
+                    cvFilePath,
                     "Theng Yuan Yuan - CV",
                   );
                 },

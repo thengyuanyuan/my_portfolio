@@ -45,7 +45,7 @@ class ProjectCardWidget extends StatelessWidget {
                     right: 10,
                     bottom: 5,
                     child: Text(
-                      projectModel.type!,
+                      projectModel.type,
                       style: TextStyle(
                         // color: Colors.black,
                         fontSize: 14,
@@ -99,8 +99,7 @@ class ProjectCardWidget extends StatelessWidget {
                       ),
                     ),
                   const Spacer(),
-                  if (projectModel.date != null)
-                    Text(DateFormat.yMMM().format(projectModel.date!)),
+                  Text(DateFormat.yMMM().format(projectModel.date)),
                 ],
               ),
             ),
@@ -110,10 +109,16 @@ class ProjectCardWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(
                 children: [
-                  const Text(
-                    "Take a look:",
+                  Text(
+                    (projectModel.githubLink == null &&
+                            projectModel.androidLink == null &&
+                            projectModel.iosLink == null &&
+                            projectModel.webLink == null &&
+                            projectModel.documentLink == null)
+                        ? 'No links available.'
+                        : 'Take a look:',
                     style: TextStyle(
-                      // color: CustomColor.yellowSecondary,
+                      color: Theme.of(context).canvasColor,
                       fontSize: 12,
                     ),
                   ),
