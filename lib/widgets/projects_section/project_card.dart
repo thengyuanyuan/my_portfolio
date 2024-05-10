@@ -7,6 +7,7 @@ import 'package:flutter_devicon/flutter_devicon.dart';
 import 'package:intl/intl.dart';
 
 import 'package:my_portfolio/models/project_model.dart';
+import 'package:my_portfolio/widgets/project_overlay.dart';
 
 class ProjectCardWidget extends StatelessWidget {
   final ProjectModel projectModel;
@@ -24,38 +25,44 @@ class ProjectCardWidget extends StatelessWidget {
         height: 380,
         width: 300,
         decoration: BoxDecoration(
-          // color: Theme.of(context).bannerTheme.backgroundColor,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(
-              height: 150,
-              width: 300,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset(
-                    projectModel.images[0].imagePath,
-                    fit: BoxFit.fitHeight,
-                  ),
-                  Positioned(
-                    right: 10,
-                    bottom: 5,
-                    child: Text(
-                      projectModel.type,
-                      style: TextStyle(
-                        // color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        backgroundColor:
-                            Theme.of(context).cardColor.withOpacity(0.6),
-                      ),
+            InkWell(
+              onTap: () => showDialog(
+                  context: context,
+                  builder: (context) {
+                    return ProjectOverlay(model: projectModel);
+                  }),
+              child: SizedBox(
+                height: 150,
+                width: 300,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(
+                      projectModel.images[0].imagePath,
+                      fit: BoxFit.fitHeight,
                     ),
-                  )
-                ],
+                    Positioned(
+                      right: 10,
+                      bottom: 5,
+                      child: Text(
+                        projectModel.type,
+                        style: TextStyle(
+                          // color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          backgroundColor:
+                              Theme.of(context).cardColor.withOpacity(0.6),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             // Title
@@ -105,7 +112,6 @@ class ProjectCardWidget extends StatelessWidget {
             ),
             // Footer
             Container(
-              // color: CustomColor.bgLight1,
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(
                 children: [
@@ -117,10 +123,6 @@ class ProjectCardWidget extends StatelessWidget {
                             projectModel.documentLink == null)
                         ? 'No links available.'
                         : 'Take a look:',
-                    style: TextStyle(
-                      color: Theme.of(context).canvasColor,
-                      fontSize: 12,
-                    ),
                   ),
                   const Spacer(),
                   if (projectModel.iosLink != null)

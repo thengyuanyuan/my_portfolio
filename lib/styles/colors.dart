@@ -26,6 +26,10 @@ class CustomTheme {
     scaffoldBackgroundColor: Colors.white,
     textTheme: Typography.blackCupertino,
     cardColor: const Color.fromARGB(255, 255, 250, 240),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+          foregroundColor: WidgetStateProperty.all<Color>(Colors.black)),
+    ),
   );
 
   static final darkTheme = theme.copyWith(
@@ -33,5 +37,9 @@ class CustomTheme {
     scaffoldBackgroundColor: Colors.black,
     textTheme: Typography.whiteCupertino,
     cardColor: const Color.fromARGB(255, 39, 37, 27),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+          foregroundColor: WidgetStateProperty.all<Color>(Colors.white)),
+    ),
   );
 }

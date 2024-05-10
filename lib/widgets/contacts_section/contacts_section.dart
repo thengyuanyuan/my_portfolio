@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_devicon/flutter_devicon.dart';
-import 'package:my_portfolio/constants/sns_links.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/constants/contact_items.dart';
 import 'package:my_portfolio/styles/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -33,59 +34,73 @@ class ContactsSection extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 650),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ResponsiveBuilder(
-                    builder: (BuildContext context, sizingInformation) {
-                  return sizingInformation.deviceScreenType ==
-                          DeviceScreenType.mobile
-                      ? nameEmailTextFieldMobile()
-                      : nameEmailTextField();
-                }),
-                const SizedBox(height: 10),
-                const CustomTextField(
-                  hintText: "Your message...",
-                  maxLine: 15,
-                ),
-                const SizedBox(height: 10),
-                SizedBox(
-                  width: double.maxFinite,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: kButtonStyle,
-                    child: const Text("Get in touch"),
-                  ),
-                ),
-                const SizedBox(
-                  height: 50,
-                  width: 200,
-                  child: Divider(
-                    thickness: 2,
-                  ),
-                ),
-                Wrap(
-                  spacing: 10,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        js.context.callMethod('open', [SnsLinks.linkedIn]);
-                      },
-                      child: const Icon(FlutterDEVICON.linkedin_plain),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        js.context.callMethod('open', [SnsLinks.gitHub]);
-                      },
-                      child: const Icon(FlutterDEVICON.github_original),
-                    ),
-                    // InkWell(child: Icon(Icons.email)),
-                    // InkWell(child: Icon(Icons.phone_rounded)),
-                  ],
+                // contactMeTextfields(),
+                // const SizedBox(
+                //   height: 50,
+                //   width: 200,
+                //   child: Divider(
+                //     thickness: 2,
+                //   ),
+                // ),
+                Table(
+                  columnWidths: const <int, TableColumnWidth>{
+                    0: IntrinsicColumnWidth(),
+                    1: IntrinsicColumnWidth(),
+                  },
+                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  children: contactItemList
+                      .map(
+                        (contact) => TableRow(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0,
+                                vertical: 5.0,
+                              ),
+                              child: Icon(contact.icon),
+                            ),
+                            SelectableText(
+                              contact.text,
+                              cursorColor: Theme.of(context).canvasColor,
+                            ),
+                          ],
+                        ),
+                      )
+                      .toList(),
                 ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Column contactMeTextfields() {
+    return Column(
+      children: [
+        ResponsiveBuilder(builder: (BuildContext context, sizingInformation) {
+          return sizingInformation.deviceScreenType == DeviceScreenType.mobile
+              ? nameEmailTextFieldMobile()
+              : nameEmailTextField();
+        }),
+        const SizedBox(height: 10),
+        const CustomTextField(
+          hintText: "Your message...",
+          maxLine: 15,
+        ),
+        const SizedBox(height: 10),
+        SizedBox(
+          width: double.maxFinite,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: kButtonStyle,
+            child: const Text("Get in touch"),
+          ),
+        ),
+      ],
     );
   }
 

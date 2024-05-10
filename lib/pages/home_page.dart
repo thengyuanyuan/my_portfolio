@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/config.dart';
-import 'package:my_portfolio/constants/assets_path.dart';
+import 'package:my_portfolio/constants/assets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../widgets/contacts_section/contacts_section.dart';
 import '../widgets/footer/footer.dart';

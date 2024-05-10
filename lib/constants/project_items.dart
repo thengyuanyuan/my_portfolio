@@ -60,7 +60,7 @@ List<ProjectModel> projectItemsList = [
   ProjectModel(
     title: "MultiSchool Marketplace Management System",
     description:
-        "A Dynamic Web App, an E-commerce System for Schools. An Industrial Final Year Project work with Winnefy (Malacca). It was done with Velzon's HTML Template.",
+        "A Dynamic Web App, an E-commerce System for Schools. My Final Year Project. It is an Industrial Final Year Project work with Winnefy (Malacca). It was designed with Velzon's HTML Template.",
     images: [
       ProjectImageModel(
           imagePath: "assets/images/projects/fyp_searchproducts.png",
@@ -139,7 +139,8 @@ List<ProjectModel> projectItemsList = [
   // Intern practice
   ProjectModel(
     title: "Xylophone",
-    description: "Simple Xylophone App Build in Flutter",
+    description:
+        "Simple Xylophone App Build in Flutter. One of the tutorial practices provided during internship.",
     images: [
       ProjectImageModel(
         imagePath: "assets/images/projects/xylophone_home.png",
