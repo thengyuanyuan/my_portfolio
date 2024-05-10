@@ -11,8 +11,6 @@ import '../widgets/projects_section/projects_section.dart';
 import '../widgets/skills_section/skills_section.dart';
 import '../utils/download_file.dart';
 
-// TODO: Publish to Netify? GitHub?
-
 class HomePage extends StatelessWidget {
   HomePage({super.key});
   final scaffoldKey = GlobalKey<ScaffoldState>();

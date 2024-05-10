@@ -3,7 +3,57 @@ import 'skill_items.dart';
 
 List<ProjectModel> projectItemsList = [
   // 2024
-  // TODO: Add flutter projects
+  ProjectModel(
+    title: "Flappy Bird Game",
+    description:
+        "A simple flappy bird game created with Flutter and Flame.\n- Learned about state management for Games with Flame.\n- Solved some Flutter Version Depreciated Issues in the app.\nFollowed tutorial from HeyFlutter.com (https://www.youtube.com/watch?v=zcs8qRBRz7w).",
+    images: [
+      ProjectImageModel(
+        imagePath: "assets/images/projects/flappybird_welcome.png",
+        imageSubtitle: 'Welcome Page',
+      ),
+      ProjectImageModel(
+        imagePath: "assets/images/projects/flappybird_play.png",
+        imageSubtitle: 'Play',
+      ),
+      ProjectImageModel(
+        imagePath: "assets/images/projects/flappybird_gameover.png",
+        imageSubtitle: 'Game Over',
+      ),
+      ProjectImageModel(
+        imagePath: "assets/images/projects/flappybird_gameover2.png",
+        imageSubtitle: 'Game Over',
+      ),
+    ],
+    skillTags: [Skills.flutter],
+    type: "Hobby Project",
+    date: DateTime(2024, DateTime.march),
+    githubLink: "https://github.com/thengyuanyuan/flappy_bird_game",
+  ),
+
+  ProjectModel(
+    title: "To-Do App",
+    description:
+        "A simple Todo App created using Flutter.\n- Learned simple state management with BloC.\nFollowed Tutorial from Youtube. https://youtu.be/v2qsVmODAiQ?si=gCssiUMwIywYdx2k",
+    images: [
+      ProjectImageModel(
+        imagePath: "assets/images/projects/todo_home.png",
+        imageSubtitle: 'Home Page',
+      ),
+      ProjectImageModel(
+        imagePath: "assets/images/projects/todo_addnewtask.png",
+        imageSubtitle: 'Add New Task',
+      ),
+      ProjectImageModel(
+        imagePath: "assets/images/projects/todo_deletetask.png",
+        imageSubtitle: 'Delete Task',
+      ),
+    ],
+    skillTags: [Skills.flutter],
+    type: "Hobby Project",
+    date: DateTime(2024, DateTime.march),
+    githubLink: "https://github.com/thengyuanyuan/todo_app",
+  ),
 
   // 2023
   // FYP
@@ -70,15 +120,43 @@ List<ProjectModel> projectItemsList = [
   ),
 
   // 2022
+  // ProjectModel(
+  //   title: "PDF Viewer",
+  //   description: "Simple PDF Viewer App Build in Flutter",
+  //   images: [
+  //     // TODO: Intern tasks
+  //     ProjectImageModel(
+  //       imagePath: "assets/images/projects/pdf_home.png",
+  //       imageSubtitle: "PDF Viewer Home Page",
+  //     ),
+  //   ],
+  //   skillTags: [Skills.flutter],
+  //   type: "Intern Task",
+  //   date: DateTime(2022, DateTime.may),
+  //   githubLink: "https://github.com/thengyuanyuan/pdf_page",
+  // ),
 
-  // TODO: Intern small tasks
+  // Intern practice
+  ProjectModel(
+    title: "Xylophone",
+    description: "Simple Xylophone App Build in Flutter",
+    images: [
+      ProjectImageModel(
+        imagePath: "assets/images/projects/xylophone_home.png",
+        imageSubtitle: "Xylophone",
+      ),
+    ],
+    skillTags: [Skills.flutter],
+    type: "Intern Practice",
+    date: DateTime(2022, DateTime.may),
+    githubLink: "https://github.com/thengyuanyuan/xylophone",
+  ),
 
   // Library Management System Web
   ProjectModel(
       title: "Library Management System (Web App)",
       description:
           "A Dynamic Web App, a system that stores books and issue records of a library.",
-      // TODO: Add Image
       images: [
         ProjectImageModel(
             imagePath: "assets/images/projects/libraryweb_memberhome.png",
