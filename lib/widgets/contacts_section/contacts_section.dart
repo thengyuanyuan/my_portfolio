@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_devicon/flutter_devicon.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/constants/contact_items.dart';
 import 'package:my_portfolio/styles/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'custom_text_field.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
 
 class ContactsSection extends StatelessWidget {
   const ContactsSection({

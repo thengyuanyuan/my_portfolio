@@ -7,7 +7,7 @@ import 'package:flutter_devicon/flutter_devicon.dart';
 import 'package:intl/intl.dart';
 
 import 'package:my_portfolio/models/project_model.dart';
-import 'package:my_portfolio/widgets/project_overlay.dart';
+import 'package:my_portfolio/widgets/gallery_widget.dart';
 
 class ProjectCardWidget extends StatelessWidget {
   final ProjectModel projectModel;
@@ -35,7 +35,7 @@ class ProjectCardWidget extends StatelessWidget {
               onTap: () => showDialog(
                   context: context,
                   builder: (context) {
-                    return ProjectOverlay(model: projectModel);
+                    return GalleryWidget(images: projectModel.images);
                   }),
               child: SizedBox(
                 height: 150,

@@ -80,21 +80,21 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
-            SliverToBoxAdapter(
-              key: navKeys[0],
-              child: MainSection(
-                onButtonTap: () {
-                  downloadFile(
-                    cvFilePath,
-                    "Theng Yuan Yuan - CV",
-                  );
-                },
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: navKeys[1],
-              child: const SkillsSection(),
-            ),
+            // SliverToBoxAdapter(
+            //   key: navKeys[0],
+            //   child: MainSection(
+            //     onButtonTap: () {
+            //       downloadFile(
+            //         cvFilePath,
+            //         "Theng Yuan Yuan - CV",
+            //       );
+            //     },
+            //   ),
+            // ),
+            // SliverToBoxAdapter(
+            //   key: navKeys[1],
+            //   child: const SkillsSection(),
+            // ),
             SliverToBoxAdapter(
               key: navKeys[2],
               child: const ProjectsSection(),
