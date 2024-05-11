@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/config.dart';
-import 'package:my_portfolio/constants/assets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import '../constants/assets.dart';
+import '../utils/download_file.dart';
 import '../widgets/contacts_section/contacts_section.dart';
 import '../widgets/footer/footer.dart';
 import '../widgets/header/drawer_mobile.dart';
@@ -9,7 +10,6 @@ import '../widgets/header/header.dart';
 import '../widgets/main_section/main_section.dart';
 import '../widgets/projects_section/projects_section.dart';
 import '../widgets/skills_section/skills_section.dart';
-import '../utils/download_file.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -80,21 +80,21 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
-            // SliverToBoxAdapter(
-            //   key: navKeys[0],
-            //   child: MainSection(
-            //     onButtonTap: () {
-            //       downloadFile(
-            //         cvFilePath,
-            //         "Theng Yuan Yuan - CV",
-            //       );
-            //     },
-            //   ),
-            // ),
-            // SliverToBoxAdapter(
-            //   key: navKeys[1],
-            //   child: const SkillsSection(),
-            // ),
+            SliverToBoxAdapter(
+              key: navKeys[0],
+              child: MainSection(
+                onButtonTap: () {
+                  downloadFile(
+                    cvFilePath,
+                    "Theng Yuan Yuan - CV",
+                  );
+                },
+              ),
+            ),
+            SliverToBoxAdapter(
+              key: navKeys[1],
+              child: const SkillsSection(),
+            ),
             SliverToBoxAdapter(
               key: navKeys[2],
               child: const ProjectsSection(),

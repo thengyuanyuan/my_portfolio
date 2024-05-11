@@ -1,27 +1,25 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
-import '../models/project_model.dart';
+import '../../models/project_model.dart';
 
-class GalleryWidget extends StatefulWidget {
+class ProjectImageGallery extends StatefulWidget {
   final PageController pageController;
   final List<ProjectImageModel> images;
   final int index;
 
-  GalleryWidget({
+  ProjectImageGallery({
     super.key,
     required this.images,
     this.index = 0,
   }) : pageController = PageController(initialPage: index);
 
   @override
-  State<GalleryWidget> createState() => _GalleryWidgetState();
+  State<ProjectImageGallery> createState() => _ProjectImageGalleryState();
 }
 
-class _GalleryWidgetState extends State<GalleryWidget> {
+class _ProjectImageGalleryState extends State<ProjectImageGallery> {
   late int currentIndex = widget.index;
 
   @override
@@ -52,10 +50,8 @@ class _GalleryWidgetState extends State<GalleryWidget> {
                 ),
               ),
               builder: (BuildContext context, int index) {
-                final urlImage = widget.images[index].imagePath;
-
                 return PhotoViewGalleryPageOptions(
-                  imageProvider: AssetImage(urlImage),
+                  imageProvider: AssetImage(widget.images[index].imagePath),
                   initialScale: PhotoViewComputedScale.contained,
                   minScale: PhotoViewComputedScale.contained,
                   maxScale: PhotoViewComputedScale.contained * 5,
@@ -75,7 +71,7 @@ class _GalleryWidgetState extends State<GalleryWidget> {
                 width: MediaQuery.sizeOf(context).width * 0.5,
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
-                  "Image ${currentIndex + 1}/${widget.images.length}: ${widget.images[currentIndex].imageSubtitle}",
+                  "Image ${currentIndex + 1}/${widget.images.length} \n${widget.images[currentIndex].imageSubtitle}",
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 17.0,

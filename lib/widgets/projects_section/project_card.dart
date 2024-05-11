@@ -7,7 +7,9 @@ import 'package:flutter_devicon/flutter_devicon.dart';
 import 'package:intl/intl.dart';
 
 import 'package:my_portfolio/models/project_model.dart';
-import 'package:my_portfolio/widgets/gallery_widget.dart';
+import 'package:my_portfolio/widgets/projects_section/project_image_gallery.dart';
+
+import 'project_full_description.dart';
 
 class ProjectCardWidget extends StatelessWidget {
   final ProjectModel projectModel;
@@ -31,85 +33,108 @@ class ProjectCardWidget extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            InkWell(
-              onTap: () => showDialog(
-                  context: context,
-                  builder: (context) {
-                    return GalleryWidget(images: projectModel.images);
-                  }),
-              child: SizedBox(
-                height: 150,
-                width: 300,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset(
-                      projectModel.images[0].imagePath,
-                      fit: BoxFit.fitHeight,
-                    ),
-                    Positioned(
-                      right: 10,
-                      bottom: 5,
-                      child: Text(
-                        projectModel.type,
-                        style: TextStyle(
-                          // color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          backgroundColor:
-                              Theme.of(context).cardColor.withOpacity(0.6),
-                        ),
+            Tooltip(
+              message: "View Images",
+              child: InkWell(
+                onTap: () => showDialog(
+                    context: context,
+                    builder: (context) {
+                      return ProjectImageGallery(images: projectModel.images);
+                    }),
+                child: SizedBox(
+                  height: 150,
+                  width: 300,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset(
+                        projectModel.images[0].imagePath,
+                        fit: BoxFit.fitHeight,
                       ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            // Title
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 15, 10, 10),
-              child: Text(
-                projectModel.title,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                  // color: CustomColor.whitePrimary,
-                ),
-              ),
-            ),
-            // Description
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: Text(
-                  projectModel.description,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w200,
-                    fontSize: 14,
-                    // color: CustomColor.whiteSecondary,
+                      Positioned(
+                        right: 10,
+                        bottom: 5,
+                        child: Text(
+                          projectModel.type,
+                          style: TextStyle(
+                            // color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            backgroundColor:
+                                Theme.of(context).cardColor.withOpacity(0.6),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: Row(
-                children: [
-                  for (int i = 0; i < projectModel.skillTags.length; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        projectModel.skillTags[i].icon,
-                        // color: Colors.grey,
+            Expanded(
+              child: Tooltip(
+                message: "View Full Description",
+                child: InkWell(
+                  onTap: () => showDialog(
+                      context: context,
+                      builder: (context) {
+                        return ProjectFullDescription(
+                            projectModel: projectModel);
+                      }),
+                  child: Column(
+                    children: [
+                      // Title
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 10),
+                        child: Text(
+                          projectModel.title,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            // color: CustomColor.whitePrimary,
+                          ),
+                        ),
                       ),
-                    ),
-                  const Spacer(),
-                  Text(DateFormat.yMMM().format(projectModel.date)),
-                ],
+                      // Description
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                          child: Text(
+                            projectModel.description,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w200,
+                              fontSize: 14,
+                              // color: CustomColor.whiteSecondary,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+                        child: Row(
+                          children: [
+                            for (int i = 0;
+                                i < projectModel.skillTags.length;
+                                i++)
+                              Padding(
+                                padding: const EdgeInsets.only(right: 5.0),
+                                child: Icon(
+                                  projectModel.skillTags[i].icon,
+                                  // color: Colors.grey,
+                                ),
+                              ),
+                            const Spacer(),
+                            Text(DateFormat.yMMM().format(projectModel.date)),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
+
             // Footer
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
