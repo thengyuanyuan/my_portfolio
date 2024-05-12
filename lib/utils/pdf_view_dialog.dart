@@ -1,7 +1,5 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/utils/download_file.dart';
+import '../utils/download_file.dart';
 import 'package:pdfx/pdfx.dart';
 
 class PDFViewerDialog extends StatelessWidget {

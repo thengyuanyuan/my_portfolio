@@ -11,7 +11,6 @@ import 'package:intl/intl.dart';
 import 'package:my_portfolio/models/project_model.dart';
 import 'package:my_portfolio/widgets/projects_section/project_image_gallery.dart';
 
-import '../../utils/pdf_view_dialog.dart';
 import 'project_full_description.dart';
 
 class ProjectCard extends StatelessWidget {
