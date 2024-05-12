@@ -11,3 +11,9 @@ ButtonStyle kButtonStyle = ElevatedButton.styleFrom(
     horizontal: 50,
   ),
 );
+
+TextStyle kIntroductionTextStyle = const TextStyle(
+  fontSize: 30.0,
+  height: 1.5,
+  fontWeight: FontWeight.w600,
+);

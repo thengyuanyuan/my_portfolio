@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/assets.dart';
+import 'package:my_portfolio/widgets/animated_role_text.dart';
 
 import '../../styles/styles.dart';
 
@@ -7,9 +8,11 @@ class MainDesktop extends StatelessWidget {
   const MainDesktop({
     super.key,
     this.onButtonTap,
+    required this.roles,
   });
 
   final VoidCallback? onButtonTap;
+  final List<String> roles;
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +26,14 @@ class MainDesktop extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Hi,\nI'm THENG YUAN YUAN.\nA Fresh Graduate.",
-                style: TextStyle(
-                  fontSize: 30.0,
-                  height: 1.5,
-                  fontWeight: FontWeight.w600,
-                  // color: CustomColor.whitePrimary,
-                ),
+              AnimatedRoleText(
+                textList: roles,
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: onButtonTap,
                 style: kButtonStyle,
-                child: const Text('Download CV'),
+                child: const Text('View CV'),
               ),
             ],
           ),

@@ -1,24 +1,34 @@
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/widgets/main_section/main_desktop.dart';
-import 'package:my_portfolio/widgets/main_section/main_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../../widgets/main_section/main_desktop.dart';
+import '../../widgets/main_section/main_mobile.dart';
+import '../../constants/assets.dart';
+import '../../utils/pdf_view_dialog.dart';
+
 class MainSection extends StatelessWidget {
-  const MainSection({
+  MainSection({
     super.key,
-    this.onButtonTap,
   });
 
-  final VoidCallback? onButtonTap;
+  final List<String> roles = [
+    "A Fresh Graduate",
+    "A Flutter Developer",
+    "A Software Engineer",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       tablet: (BuildContext context) => MainDesktop(
-        onButtonTap: onButtonTap,
+        onButtonTap: () => html.window.open(cvFilePath, "thengyuanyuan_cv.pdf"),
+        roles: roles,
       ),
       mobile: (BuildContext context) => MainMobile(
-        onButtonTap: onButtonTap,
+        onButtonTap: () => html.window.open(cvFilePath, "thengyuanyuan_cv.pdf"),
+        roles: roles,
       ),
     );
   }

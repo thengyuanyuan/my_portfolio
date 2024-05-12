@@ -1,5 +1,7 @@
-// ignore: avoid_web_libraries_in_flutter
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'dart:js' as js;
+import 'dart:html' as html;
 // import 'package:url_launcher/url_launcher.dart';
 
 import 'package:flutter/material.dart';
@@ -9,11 +11,12 @@ import 'package:intl/intl.dart';
 import 'package:my_portfolio/models/project_model.dart';
 import 'package:my_portfolio/widgets/projects_section/project_image_gallery.dart';
 
+import '../../utils/pdf_view_dialog.dart';
 import 'project_full_description.dart';
 
-class ProjectCardWidget extends StatelessWidget {
+class ProjectCard extends StatelessWidget {
   final ProjectModel projectModel;
-  const ProjectCardWidget({
+  const ProjectCard({
     super.key,
     required this.projectModel,
   });
@@ -240,17 +243,18 @@ class ProjectCardWidget extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 5.0),
                         child: InkWell(
-                          // onTap: () async {
-                          //   if (!await launchUrl(
-                          //       Uri.parse(projectModel.documentLink!))) {
-                          //     throw Exception(
-                          //         'Could not launch ${projectModel.documentLink!}');
-                          //   }
+                          // onTap: () {
+                          //   showDialog(
+                          //     context: context,
+                          //     builder: (BuildContext context) =>
+                          //         PDFViewerDialog(
+                          //       pdfAssetPath: projectModel.documentLink!,
+                          //       pdfFileName: projectModel.title,
+                          //     ),
+                          //   );
                           // },
-                          onTap: () {
-                            js.context.callMethod(
-                                "open", [projectModel.documentLink]);
-                          },
+                          onTap: () => html.window.open(
+                              projectModel.documentLink!, projectModel.title),
                           child: const Icon(Icons.file_present_rounded),
                         ),
                       ),

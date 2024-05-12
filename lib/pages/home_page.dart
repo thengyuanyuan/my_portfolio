@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/config.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import '../constants/assets.dart';
-import '../utils/download_file.dart';
 import '../widgets/contacts_section/contacts_section.dart';
 import '../widgets/footer/footer.dart';
 import '../widgets/header/drawer_mobile.dart';
@@ -82,14 +80,7 @@ class HomePage extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               key: navKeys[0],
-              child: MainSection(
-                onButtonTap: () {
-                  downloadFile(
-                    cvFilePath,
-                    "Theng Yuan Yuan - CV",
-                  );
-                },
-              ),
+              child: MainSection(),
             ),
             SliverToBoxAdapter(
               key: navKeys[1],
