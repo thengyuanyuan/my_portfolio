@@ -43,6 +43,12 @@
     }
   </script>
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      return false;
+    });
+  </script>
 </body>
 
 </html>

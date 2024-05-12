@@ -8,13 +8,11 @@ class SiteLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: const Text(
-        "THENG",
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-          decoration: TextDecoration.none,
-          // color: CustomColor.yellowSecondary,
+      child: SizedBox(
+        width: 80,
+        child: Image.asset(
+          "assets/images/logo.png",
+          fit: BoxFit.fitWidth,
         ),
       ),
     );
