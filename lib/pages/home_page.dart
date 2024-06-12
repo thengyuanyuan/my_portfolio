@@ -1,3 +1,4 @@
+import 'dart:js' as js;
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/config.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -18,6 +19,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void scrollToSection(int navIndex) {
+      if (navIndex == 4) {
+        js.context.callMethod(
+            "open", ["https://thengyuanyuan2dportfolio.netlify.app/"]);
+        return;
+      }
+
       final key = navKeys[navIndex];
       Scrollable.ensureVisible(
         key.currentContext!,
